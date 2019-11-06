@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+   <div th:text="${age}+10" />
+  <div th:text="${age}-10" />
+  <div th:text="${age}*10" />
+   <div th:text="${age}/10" />
+   <div th:text="${age}%10" />
+   
+   <div th:text="${age}<10" />
+   <div th:text="${age}<=10" />
+   <div th:text="${age}>10" />
+   <div th:text="${age}>=10" />
+   <div th:text="${age}==10" />
+   <div th:text="${age}!=10" />
+   
+   <div th:text="${age}>10 and 1==1" />
+   <div th:text="${age}>10 or 1==1" />
+   
+   <div th:text="!(${age}>10 )" />
+</body>
+</html>

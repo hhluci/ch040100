@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+   <!-- 绝对URL -->
+    <a th:href="@{http://www.baidu.com}">
+    <!-- 上下文相关的URL
+    如果将一个名称为myapp.war的文件部署到一个Tomcat服务器中，
+    那么应用程序一般是通过URL:http://localhost:8080/myapp来访问，
+    myapp就是上下文名称
+     -->
+    <a th:href="@{/order/list}">
+     <!-- 与服务器相关的URL-->
+    <a th:href="@{~/billing-app/showDetails.html}">
+    <!--协议相关URL -->
+    <script th:src="@{//scriptserver.example.net/myscript.js}">...</script>
+    <!-- 添加参数 -->
+    <a th:href="@{/order/details(id=3)}">
+    <a th:href="@{/order/details(id=3,action='show_all')}">
+    <a th:href="@{/order/{id}/details(id=3,action='show_all')}">
+    <!-- 网址片段标识符 -->
+    <a th:href="@{/home#all_info(action='show')}">
+    <!-- URL中的表达式 -->
+    <a th:href="@{/order/details(id=${id},action=(${flag} ? 'show_all' : 'show_public'))}">
+    
+    <!-- 表单中的URL -->
+    <form th:action="@{/order/processOrder}">
+        
+</body>
+</html>

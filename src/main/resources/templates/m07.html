@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<ol>  
+       <li>List循环：  
+            <table border="1">  
+              <tr>  
+                <th>value</th>  
+                
+                <th>状态变量：index</th>  
+                <th>状态变量：count</th>  
+                <th>状态变量：size</th>  
+                <th>状态变量：current</th>  
+                <th>状态变量：even</th>  
+                <th>状态变量：odd</th>  
+                <th>状态变量：first</th>  
+                <th>状态变量：last</th>  
+              </tr>  
+              <tr  th:each="v1,v1Stat : ${list}">  
+                <td th:text="${v1}"/>  
+          
+              
+                 <th th:text="${v1Stat.index}">状态变量：index</th>  
+                <th th:text="${v1Stat.count}">状态变量：count</th>  
+                <th th:text="${v1Stat.size}">状态变量：size</th>  
+                <th th:text="${v1Stat.current}">状态变量：current</th>  
+                <th th:text="${v1Stat.even}">状态变量：even****</th>  
+                <th th:text="${v1Stat.odd}">状态变量：odd</th>  
+                <th th:text="${v1Stat.first}">状态变量：first</th>  
+                <th th:text="${v1Stat.last}">状态变量：last</th>  
+              </tr>  
+            </table>  
+        </li>  
+        <li>Map循环：  
+            <div th:each="map:${map}">  
+            <div th:text="${map}"></div>  
+            </div>  
+        </li>  
+        <li>数组循环：  
+            <div th:each="array:${array}">  
+            <div th:text="${array}"></div>  
+            </div>  
+        </li>  
+        </ol>
+
+ </body>
+</html>

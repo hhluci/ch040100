@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 当条件符合时为真 -->
+   <div th:if="1>2">
+     1>2
+   </div>
+  <div th:if="1<2">
+     1<2
+   </div>
+   <!-- 当条件不符合时为真 -->
+   <div th:unless="1>2">
+     1>2
+   </div>
+   
+   <!--数字类型，匹配其中第一个 case 后，其它的 case 都将视为 false-->
+<div th:switch="1">
+    <p th:case="0">管理员</p>
+    <p th:case="1">操作员</p>
+    <p th:case="*">未知用户</p><!-- 默认选项 -->
+</div>
+ 
+<!--数字类型：当没有 case 匹配时，取默认值，当有多个匹配，只取第一个-->
+<div th:switch="-1">
+    <p th:case="0">管理员</p>
+    <p th:case="*">操作员</p>
+    <p th:case="*">未知用户</p>
+</div>
+ 
+<!--布尔类型，多个case满足时，只取第一个-->
+<div th:switch="true">
+    <p th:case="true">已婚</p>
+    <p th:case="true">已成年</p>
+    <p th:case="false">未婚</p>
+</div>
+ 
+<!--字符串类型-->
+<div th:switch="'For China'">
+    <p th:case="'For USA'">美国</p>
+    <p th:case="'For UK'">英国</p>
+    <p th:case="'For China'">中国</p>
+    <p th:case="*">未知国籍</p>
+</div>
+<!-- 三目运算符 -->
+<div th:text="${age}>60?'老人':'年轻人'"/>
+
+ </body>
+</html>

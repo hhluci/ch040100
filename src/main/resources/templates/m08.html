@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+   <a th:text="${#dates.format(new java.util.Date().getTime(), 'yyyy-MM-dd HH:mm:ss')}">time</a>
+   <div th:text="${#numbers.formatDecimal(0.123*100,2,1)}+'%'"/>
+   <div th:text="${#strings.length('ssss')} "/>
+</body>
+</html>
